@@ -11,9 +11,9 @@ class MyViewController : UIViewController {
     override func loadView() {
         setupLabel()
         
-        method(arg: true, completion: { (success) -> Void in
+        yourFunctionWith(arg: true, completion: { (success) -> Void in
             print("Second line of code executed")
-            if success { // this will be equal to whatever value is set in this method call
+            if success { // Use the value send from the other end
                 label.text = "True"
             } else {
                 label.text = "False"
@@ -35,10 +35,10 @@ class MyViewController : UIViewController {
     }
     
     
-    func method(arg: Bool, completion: (Bool) -> ()) {
+    func yourFunctionWith(arg: Bool, completion: (Bool) -> ()) {
         print("First line of code executed")
-        // do stuff here to determine what you want to "send back".
-        // we are just sending the Boolean value that was sent in "back"
+        // Perform the operations and get the  boolean result
+        // Send the result to the other end
         completion(arg)
     }
 }
