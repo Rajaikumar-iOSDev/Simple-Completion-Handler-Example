@@ -11,7 +11,7 @@ class MyViewController : UIViewController {
     override func loadView() {
         setupLabel()
         
-        yourFunctionWith(arg: true, completion: { (success) -> Void in
+        yourFunction(withArg: true, completion: { (success) -> Void in
             print("Gets executed second")
             if success { // Use the value send from the other end
                 label.text = "True"
@@ -36,7 +36,7 @@ class MyViewController : UIViewController {
     }
     
     
-    func yourFunctionWith(arg: Bool, completion: (Bool) -> ()) {
+    func yourFunction(withArg arg: Bool, completion: (Bool) -> ()) {
         print("Gets executed first")
         // Perform the operations and get the boolean result
         var localValue:Bool
