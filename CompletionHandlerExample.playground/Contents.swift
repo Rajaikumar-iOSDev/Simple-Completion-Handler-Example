@@ -41,7 +41,7 @@ class MyViewController : UIViewController {
         // Perform the operations and get the boolean result
         var localValue:Bool
         if arg {                // |
-            localValue = true       // | this has no purpose guys - just fillers
+            localValue = true       // | This has no purpose guys - just fillers
         } else{                 // |
             localValue = false      // |
         }                       // |
