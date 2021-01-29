@@ -12,13 +12,14 @@ class MyViewController : UIViewController {
         setupLabel()
         
         yourFunctionWith(arg: true, completion: { (success) -> Void in
-            print("Second line of code executed")
+            print("Gets executed second")
             if success { // Use the value send from the other end
                 label.text = "True"
             } else {
                 label.text = "False"
             }
         })
+        
         
     }
     
@@ -36,10 +37,16 @@ class MyViewController : UIViewController {
     
     
     func yourFunctionWith(arg: Bool, completion: (Bool) -> ()) {
-        print("First line of code executed")
-        // Perform the operations and get the  boolean result
+        print("Gets executed first")
+        // Perform the operations and get the boolean result
+        var localValue:Bool
+        if arg {                // |
+            localValue = true       // | this has no purpose guys - just fillers
+        } else{                 // |
+            localValue = false      // |
+        }                       // |
         // Send the result to the other end
-        completion(arg)
+        completion(localValue)
     }
 }
 // Present the view controller in the Live View window
